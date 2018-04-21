@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic night colors -->
+    <color name="colorPrimary">#161616</color>
+    <color name="colorPrimaryDark">@android:color/black</color>
+    <color name="colorAccent">#B71C1C</color>
+    <color name="contentColor">@android:color/white</color>
+
+    <!--Green night colors-->
+    <color name="colorPrimaryGreen">#388e3c</color>
+    <color name="colorPrimaryDarkGreen">#2c702f</color>
+    <color name="colorAccentGreen">#43a047</color>
+
+    <!--Pink night colors-->
+    <color name="colorPrimaryPink">#c2185b</color>
+    <color name="colorPrimaryDarkPink">#ad1457</color>
+    <color name="colorAccentPink">#ff4081</color>
+
+    <!-- Cyan night colors-->
+    <color name="colorPrimaryCyan">#00acc1</color>
+    <color name="colorPrimaryDarkCyan">#00838f</color>
+    <color name="colorAccentCyan">#26C6DA</color>
+
+    <!--Purple night colors-->
+    <color name="colorPrimaryPurple">#512da8</color>
+    <color name="colorPrimaryDarkPurple">#4527a0</color>
+    <color name="colorAccentPurple">#9575cd</color>
+
+    <!--Orange night colors-->
+    <color name="colorPrimaryOrange">#d84315</color>
+    <color name="colorPrimaryDarkOrange">#bf360c</color>
+    <color name="colorAccentOrange">#FF7043</color>
+
+    <!--Blue night colors-->
+    <color name="colorPrimaryBlue">#1976d2</color>
+    <color name="colorPrimaryDarkBlue">#1565c0</color>
+    <color name="colorAccentBlue">#29B6F6</color>
+
+    <!--Grey night colors-->
+    <color name="colorPrimaryGrey">#37474f</color>
+    <color name="colorPrimaryDarkGrey">#263238</color>
+    <color name="colorAccentGrey">#BDBDBD</color>
+
+    <!-- other colors -->
+    <color name="background">#292827</color>
+    <color name="tick">#fff</color>
+    <color name="dialog_background">#161616</color>
+    <color name="bnv_bg">#252525</color>
+    <color name="pressed_color">#616161</color>
+    <color name="normal_color">#424242</color>
+    <color name="item_on">#fff</color>
+    <color name="item_off">#757575</color>
+</resources>

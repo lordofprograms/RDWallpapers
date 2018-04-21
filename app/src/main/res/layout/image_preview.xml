@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/previewLayout"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <include
+      layout="@layout/toolbar"
+      android:id="@+id/previewToolbar" />
+
+   <android.support.v4.view.ViewPager
+       android:id="@+id/viewPagerSlider"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
+
+   <com.github.clans.fab.FloatingActionMenu
+       android:id="@+id/fabAdd"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom|end"
+       android:layout_margin="@dimen/fab_margin"
+       app:menu_colorNormal="@color/colorAccent"
+       app:menu_colorPressed="@color/fab_pressed"
+       app:menu_colorRipple="@color/fab_ripple"
+       app:menu_labels_cornerRadius="@dimen/labels_cd"
+       app:menu_labels_colorNormal="@color/fab_menu_on"
+       app:menu_labels_colorPressed="@color/item_pressed"
+       app:menu_labels_colorRipple="@color/item_ripple"
+       app:menu_labels_showShadow="true"
+       style="@style/MenuLabelsStyle"
+       app:menu_fab_show_animation="@anim/rotate_forward"
+       app:menu_fab_hide_animation="@anim/rotate_backward"
+       app:menu_icon="@drawable/ic_add"
+       app:layout_behavior="@string/fam_behavior">
+      <com.github.clans.fab.FloatingActionButton
+          android:id="@+id/fabSet"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@drawable/ic_done"
+          android:layout_marginRight="@dimen/fab_margin"
+          android:layout_marginEnd="@dimen/fab_margin"
+          android:layout_marginBottom="@dimen/fab_set_margin"
+          app:fab_colorNormal="@color/colorAccent"
+          app:fab_colorPressed="@color/fab_pressed"
+          app:fab_label="@string/set_as_wp"
+          app:fab_size="mini"
+          app:menu_fab_show_animation="@anim/fab_open"
+          app:menu_fab_hide_animation="@anim/fab_close" />
+
+      <com.github.clans.fab.FloatingActionButton
+          android:id="@+id/fabCrop"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@drawable/ic_crop"
+          android:layout_marginRight="@dimen/fab_margin"
+          android:layout_marginEnd="@dimen/fab_margin"
+          android:layout_marginBottom="@dimen/fab_crop_margin"
+          app:fab_colorNormal="@color/colorAccent"
+          app:fab_colorPressed="@color/fab_pressed"
+          app:fab_label="@string/crop"
+          app:fab_size="mini"
+          app:menu_fab_show_animation="@anim/fab_open"
+          app:menu_fab_hide_animation="@anim/fab_close" />
+
+      <com.github.clans.fab.FloatingActionButton
+          android:id="@+id/fabShare"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@drawable/ic_share"
+          android:layout_marginRight="@dimen/fab_margin"
+          android:layout_marginEnd="@dimen/fab_margin"
+          android:layout_marginBottom="@dimen/fab_share_margin"
+          app:fab_colorNormal="@color/colorAccent"
+          app:fab_colorPressed="@color/fab_pressed"
+          app:fab_label="@string/share"
+          app:fab_size="mini"
+          app:menu_fab_show_animation="@anim/fab_open"
+          app:menu_fab_hide_animation="@anim/fab_close" />
+
+      <com.github.clans.fab.FloatingActionButton
+          android:id="@+id/fabDownload"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@drawable/ic_download"
+          android:layout_marginRight="@dimen/fab_margin"
+          android:layout_marginEnd="@dimen/fab_margin"
+          app:fab_colorNormal="@color/colorAccent"
+          app:fab_colorPressed="@color/fab_pressed"
+          app:fab_showShadow="true"
+          app:fab_label="@string/download"
+          app:fab_size="mini"
+          app:menu_fab_show_animation="@anim/fab_open"
+          app:menu_fab_hide_animation="@anim/fab_close" />
+   </com.github.clans.fab.FloatingActionMenu>
+
+</android.support.design.widget.CoordinatorLayout>

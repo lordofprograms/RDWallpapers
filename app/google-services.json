@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "14952687846",
+    "firebase_url": "https://rdwallpapers-65e7f.firebaseio.com",
+    "project_id": "rdwallpapers-65e7f",
+    "storage_bucket": "rdwallpapers-65e7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14952687846:android:220335dc9709cc73",
+        "android_client_info": {
+          "package_name": "com.crazzylab.rdwallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14952687846-vhno0cinocnf0npa139gr9gnlhtvkqio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.crazzylab.rdwallpaper",
+            "certificate_hash": "49b3580addbf5907e2b5d6551c0e8bd9d1004a71"
+          }
+        },
+        {
+          "client_id": "14952687846-1n7s532p4tn0nq77u8adigtg4mvrllcb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu7g_J2KROJtjADy3piD2Wmu4jyKEtvNU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14952687846-1n7s532p4tn0nq77u8adigtg4mvrllcb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

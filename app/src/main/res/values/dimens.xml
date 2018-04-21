@@ -1,0 +1,48 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <!-- Default parameters for fabs -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_translationZ">12dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+
+    <!-- Margins for fab menu -->
+    <dimen name="fab_download_margin">90dp</dimen>
+    <dimen name="fab_share_margin">160dp</dimen>
+    <dimen name="fab_crop_margin">230dp</dimen>
+    <dimen name="fab_set_margin">300dp</dimen>
+
+    <!-- Big button margin -->
+    <dimen name="crop_margin">10dp</dimen>
+
+    <!-- Margins for textViews near fabs -->
+    <dimen name="labels_cd">3dp</dimen>
+    <dimen name="pb_margin">5dp</dimen>
+
+    <!-- Margins and sizes for ColorChooserDialog -->
+    <dimen name="image_color_size">50dp</dimen>
+    <dimen name="color_margin">5dp</dimen>
+    <dimen name="tick_image_size">24dp</dimen>
+    <dimen name="tick_image_margin">13dp</dimen>
+
+    <!-- Cards from about -->
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="image_size">100dp</dimen>
+    <dimen name="clickable_item_padding">8dp</dimen>
+    <dimen name="card_label_size">120dp</dimen>
+    <dimen name="card_common_margin">3dp</dimen>
+    <dimen name="card_common_padding">16dp</dimen>
+    <dimen name="cv_elevation">3dp</dimen>
+    <dimen name="cv_properties">5dp</dimen>
+    <dimen name="regularTextSize">20sp</dimen>
+    <dimen name="contentTextSize">18sp</dimen>
+    <dimen name="cv_margin_bottom">8dp</dimen>
+
+    <dimen name="offline_image_size">100dp</dimen>
+    <dimen name="offline_ll_margin">100dp</dimen>
+    <dimen name="offline_text_margin">10dp</dimen>
+
+</resources>

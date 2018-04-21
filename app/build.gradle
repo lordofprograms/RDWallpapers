@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
+    defaultConfig {
+        applicationId "com.crazzylab.rdwallpaper"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi', 'armeabi-v7a', 'mips'
+            universalApk false
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-messaging:11.0.4'
+    ext {
+        espresso = '2.2.2'
+        androidlibs = '27.0.2'
+        constraint = '1.0.2'
+        rxjava2 = '2.1.0'
+        rxandroid = '2.0.1'
+        retrofit = '2.3.0'
+        okhttp = '3.8.1'
+        dagger = '2.11'
+        jsr = '1.0'
+        moxy = '1.5.3'
+        materialdialogs = '0.9.6.0'
+        circleimageview = '2.2.0'
+        glide = '3.7.0'
+        fab = '1.6.4'
+        cropper = '1.0.1'
+        timber = '4.5.1'
+        junit = '4.12'
+    }
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //Kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //Android libs
+    compile "com.android.support.constraint:constraint-layout:$constraint"
+    compile "com.android.support:design:$androidlibs"
+    compile "com.android.support:support-v4:$androidlibs"
+    compile "com.android.support:cardview-v7:$androidlibs"
+    //Network
+    compile "com.squareup.retrofit2:retrofit:$retrofit"
+    compile "com.squareup.retrofit2:converter-moshi:$retrofit"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    //Rx
+    compile "io.reactivex.rxjava2:rxjava:$rxjava2"
+    compile "io.reactivex.rxjava2:rxandroid:$rxandroid"
+    //DI
+    compile "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    provided "javax.annotation:jsr250-api:$jsr"
+    //Moxy MVP
+    compile "com.arello-mobile:moxy-android:$moxy"
+    compile "com.arello-mobile:moxy-app-compat:$moxy"
+    kapt "com.arello-mobile:moxy-compiler:$moxy"
+    //Material Dialogs
+    compile "com.afollestad.material-dialogs:core:$materialdialogs"
+    //CircleImageView
+    compile "de.hdodenhof:circleimageview:$circleimageview"
+    //Glide loading rdImages
+    compile "com.github.bumptech.glide:glide:$glide"
+    //Custom fab
+    compile "com.github.clans:fab:$fab"
+    //Cropping library
+    compile "com.edmodo:cropper:$cropper"
+    //Logging
+    compile "com.jakewharton.timber:timber:$timber"
+    //Tests
+    testCompile "junit:junit:$junit"
+}
+kapt {
+    generateStubs = true
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+apply plugin: 'com.google.gms.google-services'
