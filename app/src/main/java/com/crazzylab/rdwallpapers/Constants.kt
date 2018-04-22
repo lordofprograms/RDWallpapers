@@ -4,9 +4,9 @@ package com.crazzylab.rdwallpapers
  * Created by Михаил on 09.08.2017.
  */
 object Constants {
-    const val BASE_URL = "paste your own"
+    const val BASE_URL = "https://api.myjson.com/"
     const val IMAGES_BASE_URL = "https://image.ibb.co/"
-    const val REDIRECTED_URL = "paste your own"
+    const val REDIRECTED_URL = "bins/pki17"
     const val PREVIEW_IMAGES = "Preview rdImages"
     const val PREVIEW_POSITION = "Preview position"
     const val FILE_PATH = "File Path"
