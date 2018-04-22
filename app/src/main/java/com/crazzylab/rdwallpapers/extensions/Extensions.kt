@@ -61,9 +61,7 @@ fun Toolbar.setTitleBlack(arguments: Bundle?){
 
 fun MvpAppCompatActivity.setBlackArrow(arguments: Bundle?){
     arguments?.let {
-        Log.d("ArrowDebug", "Night mode is ${it.getBoolean(Constants.IS_NIGHT_MODE_ENABLED)}")
         if(it.getBoolean(Constants.WHITE_APP_THEME) && !it.getBoolean(Constants.IS_NIGHT_MODE_ENABLED)) {
-            Log.d("ArrowDebug", "Night mode is ${it.getBoolean(Constants.IS_NIGHT_MODE_ENABLED)}")
             val upArrow = resources.getDrawable(R.drawable.ic_arrow_back)
             upArrow.setColorFilter(getResources().getColor(android.R.color.black), PorterDuff.Mode.SRC_ATOP)
             supportActionBar?.setHomeAsUpIndicator(upArrow)

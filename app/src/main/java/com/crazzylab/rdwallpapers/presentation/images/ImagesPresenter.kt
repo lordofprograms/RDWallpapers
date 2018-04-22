@@ -3,7 +3,6 @@ package com.crazzylab.rdwallpapers.presentation.images
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.crazzylab.rdwallpapers.RDWallpapersApp
 import com.crazzylab.rdwallpapers.di.components.DaggerImagesComponent

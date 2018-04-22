@@ -18,24 +18,22 @@ import com.google.firebase.messaging.RemoteMessage
 class PushNotificationService: FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
-        Log.d("PushService", "From: " + remoteMessage!!.from)
-        Log.d("PushService", "Notification Message Body: " + remoteMessage.notification.body!!)
-        sendNotification(remoteMessage)
+        if(remoteMessage != null) sendNotification(remoteMessage)
     }
     private fun sendNotification(remoteMessage: RemoteMessage) {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        val pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this)
                 .setContentText(remoteMessage.notification.body)
                 .setAutoCancel(true)
                 .setSmallIcon(R.drawable.ic_notification)
+                .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent)
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())
+        notificationManager.notify(0 , notificationBuilder.build())
     }
 
 }
