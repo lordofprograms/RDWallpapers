@@ -114,14 +114,13 @@
         become a "motivation in your pocket". Take the atmosphere of motivation and self-development with yourself and be unstoppable!</string>
 
     <!--change rate_url-->
-    <string name="rate_url" translatable="false">https://play.google.com/store/apps/details?id=com.crazy_lab.pumpyourbrain1</string>
+    <string name="rate_url" translatable="false">https://play.google.com/store/apps/details?id=com.crazzylab.rdwallpapers</string>
     <string name="support_email" translatable="false">crazzylab@gmail.com</string>
     <string name="send_email">Send feedback email via</string>
     <string name="email_subject">Feedback about RDWallpapers app</string>
     <string name="share_text">Here is an amazing with an amazing collection of motivational wallpaper without annoying ads!
         Download it by the link: </string>
-    <!--change source_url-->
-    <string name="source_url" translatable="false">https://gitlab.com/terrakok/gitlab-client</string>
+    <string name="source_url" translatable="false">https://github.com/lordofprograms/RDWallpapers</string>
     <array name="developers_array">
         <item>@string/developer_name</item>
     </array>

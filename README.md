@@ -1,5 +1,5 @@
 # RDWallpapers
- An app that has collected amazing motivational wallpapers in order to become "motivation in your pocket". Also, it is fully written in Kotlin and built with uch technologies as:
+ An app that has collected amazing motivational wallpapers in order to become "motivation in your pocket". Also, it is fully written in Kotlin and built with such technologies as:
  * RxJava2, 
  * Retrofit, 
  * Realm, 
