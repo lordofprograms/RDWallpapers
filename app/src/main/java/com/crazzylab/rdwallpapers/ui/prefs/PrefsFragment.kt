@@ -55,10 +55,7 @@ class PrefsFragment : PreferenceFragment(), PrefsView, Preference.OnPreferenceCl
 
     override fun onSwitchClick() {
         val switch = findPreference(getString(R.string.push_notification_key)) as SwitchPreference
-            when (switch.isEnabled) {
-                true -> presenter.enableNotifications()
-                false -> presenter.disEnableNotifications()
-        }
+        presenter.setNotificationState(switch.isEnabled)
     }
 
     override fun setSwitchState() {

@@ -24,7 +24,7 @@ class SimpleImagesDelegateAdapter: ViewTypeDelegateAdapter {
 
     class ImageViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(parent.inflate(R.layout.image_item)) {
 
-        private val iv = itemView.findViewById(R.id.imageWp) as ImageView
+        private val iv: ImageView = itemView.findViewById(R.id.imageWp)
 
         fun bind(item: ImageItem) = iv.loadImage(itemView?.context, item.image)
 

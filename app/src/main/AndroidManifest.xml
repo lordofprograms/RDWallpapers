@@ -25,7 +25,8 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="default_channel_id"/>
 
-        <service android:name="com.crazzylab.rdwallpapers.presentation.global.PushNotificationService">
+        <service android:name="com.crazzylab.rdwallpapers.presentation.global.PushNotificationService"
+            android:permission="">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

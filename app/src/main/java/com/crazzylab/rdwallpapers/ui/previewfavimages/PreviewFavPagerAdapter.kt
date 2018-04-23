@@ -25,7 +25,7 @@ class PreviewFavPagerAdapter : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): View {
         val view = container.inflate(R.layout.image_slider_item)
-        val imageView = view.findViewById(R.id.imagePreview) as ImageView
+        val imageView: ImageView = view.findViewById(R.id.imagePreview)
         val image = imagesList[position]
         imageView.loadImage(container.context, image.image)
 

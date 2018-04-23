@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:14952687846:android:220335dc9709cc73",
+        "mobilesdk_app_id": "1:14952687846:android:a72c8dca5e37c5be",
         "android_client_info": {
-          "package_name": "com.crazzylab.rdwallpaper"
+          "package_name": "com.crazzylab.rdwallpapers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "14952687846-vhno0cinocnf0npa139gr9gnlhtvkqio.apps.googleusercontent.com",
+          "client_id": "14952687846-d551kark98285tohjla8jojha2ps0efn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.crazzylab.rdwallpaper",
+            "package_name": "com.crazzylab.rdwallpapers",
             "certificate_hash": "49b3580addbf5907e2b5d6551c0e8bd9d1004a71"
           }
         },

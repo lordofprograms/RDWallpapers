@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:14952687846:android:220335dc9709cc73",
+        "mobilesdk_app_id": "1:14952687846:android:a72c8dca5e37c5be",
         "android_client_info": {
-          "package_name": "com.crazzylab.rdwallpaper"
+          "package_name": "com.crazzylab.rdwallpapers"
         }
       },
       "oauth_client": [

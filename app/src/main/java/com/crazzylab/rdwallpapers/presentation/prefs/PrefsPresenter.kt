@@ -57,9 +57,14 @@ class PrefsPresenter @Inject constructor(private val prefsInteractor: PrefsInter
 
     fun isAppTheme() = prefsInteractor.isAppTheme()
 
-    fun enableNotifications() = prefsInteractor.enableNotifications()
+    fun setNotificationState(isEnabled: Boolean) = when(isEnabled){
+        true -> prefsInteractor.enableNotifications()
+        false -> prefsInteractor.disEnableNotifications()
+    }
 
-    fun disEnableNotifications() = prefsInteractor.disEnableNotifications()
+    /*fun enableNotifications() = prefsInteractor.enableNotifications()
+
+    fun disEnableNotifications() = prefsInteractor.disEnableNotifications()*/
 
     private fun shareWith(view: PrefsView) = Single.just(view.setShareIntent())
             .subscribeOn(rxSchedulers.io())
