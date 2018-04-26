@@ -20,7 +20,8 @@ class ImagesModule {
 
     @ImagesScope
     @Provides
-    fun provideImagesRepository(api: ImageApi) = ImagesRepository(api)
+    fun provideImagesRepository(api: ImageApi, errorHandler: RestErrorHandler) =
+            ImagesRepository(api, errorHandler)
 
     @ImagesScope
     @Provides

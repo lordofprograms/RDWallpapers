@@ -94,7 +94,6 @@ class ImagesPresenter : BasePresenter<ImagesView>() {
     private fun requestImages(redirectedUrl: String): Observable<List<ImageItem>> =
             imagesInteractor.getImages(redirectedUrl)
                     .doOnNext { this.redirectedUrl = it.redirectedUrl }
-                    .doOnError { errorHandler.proceed(it) }
                     .map { it.elements }
 
     fun goToOnline(){

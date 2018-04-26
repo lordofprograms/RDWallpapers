@@ -26,7 +26,7 @@ class PushNotificationService: FirebaseMessagingService() {
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this)
-                .setContentText(remoteMessage.notification.body)
+                .setContentText(remoteMessage.notification?.body)
                 .setAutoCancel(true)
                 .setSmallIcon(R.drawable.ic_notification)
                 .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))

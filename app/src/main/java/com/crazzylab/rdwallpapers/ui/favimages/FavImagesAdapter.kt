@@ -14,17 +14,15 @@ import com.crazzylab.rdwallpapers.extensions.loadImage
  */
 class FavImagesAdapter: RecyclerView.Adapter<FavImagesAdapter.FavImageViewHolder>() {
 
-     private val favListImages = ArrayList<ImageModel>()
+    private val favListImages = ArrayList<ImageModel>()
 
     fun setFavList(favList: ArrayList<ImageModel>) {
         if(favListImages.isEmpty()) favListImages.addAll(favList)
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): FavImageViewHolder? {
-        val view = parent?.inflate(R.layout.image_item)
-        return FavImageViewHolder(view)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavImageViewHolder =
+            FavImageViewHolder(parent.inflate(R.layout.image_item))
 
     override fun onBindViewHolder(holder: FavImageViewHolder, position: Int) {
         val image = favListImages[position]
