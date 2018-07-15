@@ -31,14 +31,6 @@ class ImagesModule {
 
     @ImagesScope
     @Provides
-    fun provideResourceManager(context: Context) = ResourceManager(context)
-
-    @ImagesScope
-    @Provides
-    fun provideRestErrorHandler(resourceManager: ResourceManager) = RestErrorHandler(resourceManager)
-
-    @ImagesScope
-    @Provides
     fun provideNetworkChecker(context: Context) = NetworkManager(context)
 
 }

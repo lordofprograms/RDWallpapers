@@ -25,12 +25,4 @@ class FavImagesModule {
     @ImagesScope
     fun provideFavImagesInteractor(favImagesRepository: FavImagesRepository) = FavImagesInteractor(favImagesRepository)
 
-    @FavImagesScope
-    @Provides
-    fun provideResourceManager(context: Context) = ResourceManager(context)
-
-    @FavImagesScope
-    @Provides
-    fun provideRestErrorHandler(resourceManager: ResourceManager) = RestErrorHandler(resourceManager)
-
 }

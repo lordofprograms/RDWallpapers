@@ -28,18 +28,6 @@ class PreviewImagesModule {
 
     @PreviewImagesScope
     @Provides
-    fun providePrefs(context: Context) = Prefs(context)
-
-    @PreviewImagesScope
-    @Provides
-    fun provideResourceManager(context: Context) = ResourceManager(context)
-
-    @PreviewImagesScope
-    @Provides
-    fun provideRestErrorHandler(resourceManager: ResourceManager) = RestErrorHandler(resourceManager)
-
-    @PreviewImagesScope
-    @Provides
     fun provideThemeRepository(prefs: Prefs, resourceManager: ResourceManager) =
             ThemeRepository(prefs, resourceManager)
 

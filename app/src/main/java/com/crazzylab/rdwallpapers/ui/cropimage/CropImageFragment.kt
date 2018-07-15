@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.crop_image_fragment.*
 /**
  * Created by Михаил on 23.08.2017.
  */
-class CropImageFragment: BaseFragment(), CropImageView {
+class CropImageFragment : BaseFragment(), CropImageView {
 
     @InjectPresenter
     lateinit var presenter: CropImagePresenter
@@ -31,11 +31,15 @@ class CropImageFragment: BaseFragment(), CropImageView {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         cropImage.setImageBitmap(BitmapFactory.decodeFile(arguments?.getString(Constants.FILE_PATH)))
-        btnSet.setOnClickListener { activity?.let { presenter.setWallpaper(it, cropImage.croppedImage) } }
+        btnSet.setOnClickListener { activity?.let {
+                if (cropImage.croppedImage != null) presenter.setWallpaper(it, cropImage.croppedImage)
+                else afterWallpapersSet(R.string.unknown_error)
+            }
+        }
     }
 
-    override fun afterWallpapersSet() {
-        showSnack(getString(R.string.wp_setted))
+    override fun afterWallpapersSet(resId: Int) {
+        showSnack(getString(resId))
         activity?.let { presenter.makeSbTransparent(it) }
     }
 

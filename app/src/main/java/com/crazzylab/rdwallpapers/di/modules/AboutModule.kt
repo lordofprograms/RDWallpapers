@@ -16,10 +16,6 @@ class AboutModule {
 
     @AboutScope
     @Provides
-    fun provideResourceManager(context: Context) = ResourceManager(context)
-
-    @AboutScope
-    @Provides
     fun provideAppInfoRepository(resourceManager: ResourceManager) = AppInfoRepository(resourceManager)
 
     @AboutScope

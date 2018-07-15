@@ -11,10 +11,10 @@ import javax.inject.Inject
  * Created by Михаил on 26.01.2018.
  */
 @Module
-class DbServiceModule @Inject constructor(private val rxSchedulers: SchedulersProvider) {
+class DbServiceModule {
 
     @AppScope
     @Provides
-    fun provideDbService() = DbService(rxSchedulers)
+    fun provideDbService(rxSchedulers: SchedulersProvider) = DbService(rxSchedulers)
 
 }

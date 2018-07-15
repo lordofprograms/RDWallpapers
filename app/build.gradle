@@ -6,7 +6,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.crazzylab.rdwallpapers"
         minSdkVersion 16
@@ -31,7 +31,7 @@ dependencies {
     ext {
         espresso = '2.2.2'
         androidlibs = '27.1.1'
-        constraint = '1.1.0'
+        constraint = '1.1.2'
         rxjava2 = '2.1.0'
         rxandroid = '2.0.1'
         retrofit = '2.3.0'
@@ -39,7 +39,7 @@ dependencies {
         dagger = '2.11'
         jsr = '1.0'
         moxy = '1.5.3'
-        firebase = '15.0.0'
+        firebase = '17.1.0'
         materialdialogs = '0.9.6.0'
         circleimageview = '2.2.0'
         glide = '3.7.0'
@@ -48,49 +48,49 @@ dependencies {
         timber = '4.5.1'
         junit = '4.12'
     }
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso", {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espresso", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //Kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //Android libs
-    compile "com.android.support.constraint:constraint-layout:$constraint"
-    compile "com.android.support:design:$androidlibs"
-    compile "com.android.support:support-v4:$androidlibs"
-    compile "com.android.support:cardview-v7:$androidlibs"
+    implementation "com.android.support.constraint:constraint-layout:$constraint"
+    implementation "com.android.support:design:$androidlibs"
+    implementation "com.android.support:support-v4:$androidlibs"
+    implementation "com.android.support:cardview-v7:$androidlibs"
     //Network
-    compile "com.squareup.retrofit2:retrofit:$retrofit"
-    compile "com.squareup.retrofit2:converter-moshi:$retrofit"
-    compile "com.squareup.okhttp3:logging-interceptor:$okhttp"
-    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
     //Rx
-    compile "io.reactivex.rxjava2:rxjava:$rxjava2"
-    compile "io.reactivex.rxjava2:rxandroid:$rxandroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
     //DI
-    compile "com.google.dagger:dagger:$dagger"
+    implementation "com.google.dagger:dagger:$dagger"
     kapt "com.google.dagger:dagger-compiler:$dagger"
-    provided "javax.annotation:jsr250-api:$jsr"
+    compileOnly "javax.annotation:jsr250-api:$jsr"
     //Moxy MVP
-    compile "com.arello-mobile:moxy-android:$moxy"
-    compile "com.arello-mobile:moxy-app-compat:$moxy"
+    implementation "com.arello-mobile:moxy-android:$moxy"
+    implementation "com.arello-mobile:moxy-app-compat:$moxy"
     kapt "com.arello-mobile:moxy-compiler:$moxy"
     //Firebase
     implementation "com.google.firebase:firebase-messaging:$firebase"
     //Material Dialogs
-    compile "com.afollestad.material-dialogs:core:$materialdialogs"
+    implementation "com.afollestad.material-dialogs:core:$materialdialogs"
     //CircleImageView
-    compile "de.hdodenhof:circleimageview:$circleimageview"
+    implementation "de.hdodenhof:circleimageview:$circleimageview"
     //Glide loading rdImages
-    compile "com.github.bumptech.glide:glide:$glide"
+    implementation "com.github.bumptech.glide:glide:$glide"
     //Custom fab
-    compile "com.github.clans:fab:$fab"
+    implementation "com.github.clans:fab:$fab"
     //Cropping library
-    compile "com.edmodo:cropper:$cropper"
+    implementation "com.edmodo:cropper:$cropper"
     //Logging
-    compile "com.jakewharton.timber:timber:$timber"
+    implementation "com.jakewharton.timber:timber:$timber"
     //Tests
-    testCompile "junit:junit:$junit"
+    testImplementation "junit:junit:$junit"
 }
 kapt {
     generateStubs = true

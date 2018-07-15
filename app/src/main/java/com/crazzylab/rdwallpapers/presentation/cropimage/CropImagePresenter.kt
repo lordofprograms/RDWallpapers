@@ -4,6 +4,7 @@ import android.app.WallpaperManager
 import android.graphics.Bitmap
 import android.support.v4.app.FragmentActivity
 import com.arellomobile.mvp.InjectViewState
+import com.crazzylab.rdwallpapers.R
 import com.crazzylab.rdwallpapers.RDWallpapersApp
 import com.crazzylab.rdwallpapers.di.components.DaggerCropImageComponent
 import com.crazzylab.rdwallpapers.di.modules.CropImageModule
@@ -21,8 +22,10 @@ import javax.inject.Inject
 @InjectViewState
 class CropImagePresenter : BasePresenter<CropImageView>() {
 
-    @Inject lateinit var rxSchedulers: SchedulersProvider
-    @Inject lateinit var errorHandler: RestErrorHandler
+    @Inject
+    lateinit var rxSchedulers: SchedulersProvider
+    @Inject
+    lateinit var errorHandler: RestErrorHandler
 
     init {
         DaggerCropImageComponent.builder()
@@ -31,21 +34,21 @@ class CropImagePresenter : BasePresenter<CropImageView>() {
     }
 
     fun makeSbTransparent(activity: FragmentActivity): Disposable =
-            Completable.fromObservable(transparent(activity))
-                    .subscribe(
-                            { activity.supportFragmentManager.popBackStack() },
-                            { errorHandler.proceed(it) }
-                    )
+        Completable.fromObservable(transparent(activity))
+            .subscribe(
+                { activity.supportFragmentManager.popBackStack() },
+                { errorHandler.proceed(it) }
+            )
 
     fun setWallpaper(activity: FragmentActivity, croppedImage: Bitmap) =
-            Observable.just(WallpaperManager.getInstance(activity))
-                    .subscribeOn(rxSchedulers.io())
-                    .observeOn(rxSchedulers.ui())
-                    .subscribe(
-                            { it.setBitmap(croppedImage) },
-                            { errorHandler.proceed(it) },
-                            { viewState.afterWallpapersSet() }
-                    )
-                    .connect()
+        Observable.just(WallpaperManager.getInstance(activity))
+            .subscribeOn(rxSchedulers.io())
+            .observeOn(rxSchedulers.ui())
+            .subscribe(
+                { it.setBitmap(croppedImage) },
+                { errorHandler.proceed(it) },
+                { viewState.afterWallpapersSet(R.string.wp_setted) }
+            )
+            .connect()
 
 }

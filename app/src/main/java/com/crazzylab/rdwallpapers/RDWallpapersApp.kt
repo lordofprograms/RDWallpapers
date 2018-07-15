@@ -1,6 +1,8 @@
 package com.crazzylab.rdwallpapers
 
 import android.app.Application
+import android.os.Build
+import android.os.StrictMode
 import com.crazzylab.rdwallpapers.di.components.AppComponent
 import com.crazzylab.rdwallpapers.di.modules.app.AppContextModule
 import com.crazzylab.rdwallpapers.di.components.DaggerAppComponent
@@ -22,13 +24,16 @@ class RDWallpapersApp : Application() {
     override fun onCreate() {
         super.onCreate()
         INSTANCE = this
+        disableDeathOnFileUriExposure()
         initializeLogger()
         initAppComponent()
         initRealmConfig()
     }
 
     private fun initAppComponent(){
-        graph = DaggerAppComponent.builder().appContextModule(AppContextModule(this)).build()
+        graph = DaggerAppComponent.builder()
+                .appContextModule(AppContextModule(this))
+                .build()
     }
 
     private fun initRealmConfig(){
@@ -38,6 +43,17 @@ class RDWallpapersApp : Application() {
                 .migration(RealmImageMigration())
                 .build()
         Realm.setDefaultConfiguration(config)
+    }
+
+    private fun disableDeathOnFileUriExposure() {
+        if (Build.VERSION.SDK_INT >= 24) {
+            try {
+                val m = StrictMode::class.java.getMethod("disableDeathOnFileUriExposure")
+                m.invoke(null)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     private fun initializeLogger(){

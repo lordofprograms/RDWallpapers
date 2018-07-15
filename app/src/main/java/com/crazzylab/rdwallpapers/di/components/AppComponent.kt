@@ -4,7 +4,11 @@ import android.content.Context
 import com.crazzylab.rdwallpapers.model.data.server.ImageApi
 import com.crazzylab.rdwallpapers.di.modules.app.*
 import com.crazzylab.rdwallpapers.di.scopes.AppScope
+import com.crazzylab.rdwallpapers.model.data.db.DbService
+import com.crazzylab.rdwallpapers.model.data.storage.Prefs
+import com.crazzylab.rdwallpapers.model.system.ResourceManager
 import com.crazzylab.rdwallpapers.model.system.SchedulersProvider
+import com.crazzylab.rdwallpapers.presentation.global.managers.RestErrorHandler
 import dagger.Component
 
 /**
@@ -12,13 +16,22 @@ import dagger.Component
  */
 @AppScope
 @Component(modules = [(NetworkModule::class), (AppContextModule::class), (ResourceManagerModule::class),
-(RestErrorHandlerModule::class), (RealmDbModule::class), (RxModule::class), (ImagesApiServiceModule::class)])
+    (PrefsAppModule::class), (DbServiceModule:: class), (RestErrorHandlerModule::class), (RealmDbModule::class),
+    (RxModule::class), (ImagesApiServiceModule::class)])
 interface AppComponent {
 
     fun getAppContext(): Context
 
-    fun rxSchedulers(): SchedulersProvider
+    fun getRxSchedulers(): SchedulersProvider
 
-    fun apiService(): ImageApi
+    fun getApiService(): ImageApi
+
+    fun getResourceManager(): ResourceManager
+
+    fun getDbService(): DbService
+
+    fun getPrefs(): Prefs
+
+    fun getRestErrorHandler(): RestErrorHandler
 
 }

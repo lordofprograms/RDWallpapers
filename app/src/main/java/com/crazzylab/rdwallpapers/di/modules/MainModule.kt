@@ -1,6 +1,5 @@
 package com.crazzylab.rdwallpapers.di.modules
 
-import android.content.Context
 import com.crazzylab.rdwallpapers.di.scopes.MainScope
 import com.crazzylab.rdwallpapers.model.repository.NightModeRepository
 import com.crazzylab.rdwallpapers.model.data.storage.Prefs
@@ -15,14 +14,6 @@ import dagger.Provides
  */
 @Module
 class MainModule {
-
-    @MainScope
-    @Provides
-    fun provideResourceManager(context: Context) = ResourceManager(context)
-
-    @MainScope
-    @Provides
-    fun providePrefs(context: Context) = Prefs(context)
 
     @MainScope
     @Provides

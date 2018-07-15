@@ -20,14 +20,6 @@ class PrefsModule {
 
     @PrefsScope
     @Provides
-    fun provideResourceManager(context: Context) = ResourceManager(context)
-
-    @PrefsScope
-    @Provides
-    fun providePrefs(context: Context) = Prefs(context)
-
-    @PrefsScope
-    @Provides
     fun provideNightModeRepository(prefs: Prefs) = NightModeRepository(prefs)
 
     @PrefsScope

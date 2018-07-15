@@ -11,10 +11,10 @@ import javax.inject.Inject
  * Created by Михаил on 10.12.2017.
  */
 @Module
-class RestErrorHandlerModule @Inject constructor(private val resourceManager: ResourceManager) {
+class RestErrorHandlerModule {
 
     @AppScope
     @Provides
-    fun provideRestErrorHandler() = RestErrorHandler(resourceManager)
+    fun provideRestErrorHandler(resourceManager: ResourceManager) = RestErrorHandler(resourceManager)
 
 }

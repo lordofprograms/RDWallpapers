@@ -7,6 +7,6 @@ import com.arellomobile.mvp.MvpView
  */
 interface CropImageView: MvpView {
 
-    fun afterWallpapersSet()
+    fun afterWallpapersSet(resId: Int)
 
 }

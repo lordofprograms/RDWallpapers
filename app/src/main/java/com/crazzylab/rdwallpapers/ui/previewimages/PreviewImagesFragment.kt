@@ -129,6 +129,7 @@ class PreviewImagesFragment : BaseFragment(), PreviewImagesView {
         intent.addCategory(Intent.CATEGORY_DEFAULT)
         intent.setDataAndType(uri, "image/*")
         intent.putExtra("mimeType", "image/*")
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         startActivity(Intent.createChooser(intent, getString(R.string.set_as)))
     }
 
@@ -152,9 +153,6 @@ class PreviewImagesFragment : BaseFragment(), PreviewImagesView {
         showSnack(error)
         hideDownloadingDialog()
     }
-    /*fun showSystemMessage(){
-        Toast.makeText(activity, )
-    }*/
 
     override fun setListeners() {
         with(presenter) {
@@ -201,8 +199,7 @@ class PreviewImagesFragment : BaseFragment(), PreviewImagesView {
     }
 
     override fun goToCropImage(file: File) {
-            activity?.let { activity ->
-                with(activity) {
+            activity?.let { activity -> with(activity) {
                 clearTransparent(this)
                 supportFragmentManager.beginTransaction()
                         .replace(R.id.container, CropImageFragment().getInstance(file.path))
